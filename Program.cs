@@ -1,9 +1,15 @@
 ﻿using System;
+using SCMCalculadora;
 
-class program
+class Program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("Calculadodora");              
+
+        Console.WriteLine("Calculadora Padrão");
+        CalculadoraPadrao operacao1 = new CalculadoraPadrao(12, 5);
+        operacao1.Calculando4Operacoes();
     }
+}
+}
 }
