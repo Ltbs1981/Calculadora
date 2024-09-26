@@ -4,29 +4,32 @@ namespace SCMCalculadora
 {
     public class CalculadoraPadrao
     {
-        public int Numero_1 { get; set; }
-        public int Numero_2 { get; set; }
+        public double Numero1 { get; set; }
+        public double Numero2 { get; set; }
 
-
-        public CalculadoraPadrao(int numero_1)
+        public CalculadoraPadrao(double numero1, double numero2)
         {
-            Numero_1 = numero_1;
+            Numero1 = numero1;
+            Numero2 = numero2;
         }
 
+        public double Soma() => Numero1 + Numero2;
 
-        public CalculadoraPadrao(int numero_1, int numero_2)
+        public double Subtracao() => Numero1 - Numero2;
+
+        public double Multiplicacao() => Numero1 * Numero2;
+
+        public double Divisao()
         {
-            Numero_1 = numero_1;
-            Numero_2 = numero_2;
-        }
-
-
-        public virtual void Calculando4Operacoes()
-        {
-            Console.WriteLine($"Soma: {Numero_1 + Numero_2}");
-            Console.WriteLine($"Subtração: {Numero_1 - Numero_2}");
-            Console.WriteLine($"Multiplicação: {Numero_1 * Numero_2}");
-            Console.WriteLine($"Divisão: {Numero_1 / Numero_2}");
+            if (Numero2 == 0)
+            {
+                Console.WriteLine("O divisor não pode ser zero!");
+                return 0;
+            }
+            else
+            {
+                return Numero1 / Numero2;
+            }
         }
     }
 }

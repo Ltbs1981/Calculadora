@@ -2,18 +2,15 @@
 
 namespace SCMCalculadora
 {
-    
     public class CalculadoraCientifica : CalculadoraPadrao
     {
+        public double Numero3 { get; set; }
 
-public CalculadoraCientifica(int numero_1) : base(numero_1) { }        
-        public CalculadoraCientifica(int numero_1, int numero_2) : base(numero_1, numero_2) { }
-
-
-        public void RaizQuadrada()
+        public CalculadoraCientifica(double numero1, double numero2, double numero3) : base(numero1, numero2)
         {
-            Console.WriteLine($"Raiz quadrada de {Numero_1}: {Math.Sqrt(Numero_1)}");
-            Console.WriteLine($"Raiz quadrada de {Numero_2}: {Math.Sqrt(Numero_2)}");
+            Numero3 = numero3;
         }
+
+        public double Raiz() => Math.Sqrt(Numero3);
     }
 }

@@ -1,21 +1,18 @@
-﻿using System;
-using SCMCalculadora;
+﻿using SCMCalculadora;
+using System;
 
 class Program
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
-        Console.WriteLine("Calculadora Padrão");
-        CalculadoraPadrao operacao1 = new CalculadoraPadrao(12, 5);
-        operacao1.Calculando4Operacoes();
+        CalculadoraPadrao operacao1 = new(5.9, 9.3);
+        Console.WriteLine($"Resultado da soma: {Math.Round(operacao1.Soma(), 2)}");
+        Console.WriteLine($"Resultado da subtração: {Math.Round(operacao1.Subtracao(), 2)}");
+        Console.WriteLine($"Resultado da divisão: {Math.Round(operacao1.Divisao(), 2)}");
+        Console.WriteLine($"Resultado da multiplicação: {Math.Round(operacao1.Multiplicacao(), 2)}");
 
-        Console.WriteLine("\nCalculadora Científica");
-        CalculadoraCientifica operacao2 = new CalculadoraCientifica(16, 9);
-        operacao2.Calculando4Operacoes();
-        operacao2.RaizQuadrada();
-
-        CalculadoraCientifica operacao3 = new CalculadoraCientifica(65536);
-        operacao3.RaizQuadrada();
-
+        CalculadoraCientifica operacao2 = new(25, 9, 81);
+        Console.WriteLine($"Resultado da raiz quadrada: {Math.Round(operacao2.Raiz(), 2)}");
+        Console.WriteLine($"Resultado da soma (herdado da CalculadoraPadrao): {Math.Round(operacao2.Soma(), 2)}");
     }
 }
