@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="CalculadoraCientifica.cs" />
+    <Compile Remove="CalculadorPadrao.cs" />
+  </ItemGroup>
+
 </Project>
